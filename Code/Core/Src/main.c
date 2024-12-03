@@ -71,13 +71,16 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+  SCH_Init();
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
+  SCH_Add_Task(Function_A, 0, 2);
+  SCH_Add_Task(Function_B, 1, 10);
+  SCH_Add_Task(Function_C, 3, 15);
 
   /* USER CODE BEGIN SysInit */
 
